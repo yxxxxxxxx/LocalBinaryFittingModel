@@ -230,6 +230,9 @@ std::vector<std::vector<int> > SegmentMeasure(cv::Mat img)
 }
 int main(int argc, char** argv)
 {
+	auto t1 = system_clock::now();
+	cv::Mat img  = cv::imread(argv[1]);
+	auto t2 = system_clock::now();
 	std::vector<vector<int >> v = SingleSegmentMeasure(img);
 	for(int iter = 0; iter < v.size(); iter++)
 	{	
