@@ -155,8 +155,8 @@ std::vector<std::vector<int> > SegmentMeasure(cv::Mat img)
 	int boardsize = 20;
 	int iscircle = 1;
 	int r = 10;
-	int centerx = 200; //可选参数，随机生成
-	int centery = 200; //可选参数，随机生成
+	int centerx = 200; //可变参数，随机生成
+	int centery = 200; //可变参数，随机生成
 	cv::resize(img, img, cv::Size(400, 300));
 	if(img.channels() == 3)
 	{
