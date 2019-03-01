@@ -226,11 +226,11 @@ std::vector<std::vector<int> > SegmentMeasure(cv::Mat img)
     	result[iter].push_back(h);
     	result[iter].push_back(area);
 	}
-    return result;
+	return result;
 }
 int main(int argc, char** argv)
 {
-  std::vector<vector<int >> v = SingleSegmentMeasure(img);
+	std::vector<vector<int >> v = SingleSegmentMeasure(img);
 	for(int iter = 0; iter < v.size(); iter++)
 	{	
  	  		int w = v[iter][0];
@@ -243,5 +243,5 @@ int main(int argc, char** argv)
 	auto d2 = duration_cast<microseconds>(t3 - t2);
 	printf("read time : %lf s\n", d1.count() / 1000000.);
 	printf("cal time : %lf s\n", d2.count() / 1000000.);
-  return 0;
+	return 0;
 }
