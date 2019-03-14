@@ -206,27 +206,7 @@ std::vector<std::vector<int> > SegmentMeasure(cv::Mat img)
 			}
 		}
 	}
-	//Measure
-	cv::Mat labels, stats, centers;
-	int nccomps = cv::connectedComponentsWithStats (
-            SaveLBF, //二值图像
-            labels,     //和原图一样大的标记图
-            stats, //nccomps×5的矩阵 表示每个连通区域的外接矩形和面积（pixel）
-            centers //nccomps×2的矩阵 表示每个连通区域的质心
-            );
-	std::vector<std::vector<int> > result(nccomps);
-	for(int iter = 0; iter < nccomps; iter++)
-	{	
-		int x = stats.at<int>(iter, 0);
-  		int y = stats.at<int>(iter, 1);
-  		int w = stats.at<int>(iter, 2);
-  		int h = stats.at<int>(iter, 3);
-  		int area = stats.at<int>(iter, 4);
-  		result[iter].push_back(w);
-    	result[iter].push_back(h);
-    	result[iter].push_back(area);
-	}
-	return result;
+	cv::imwrite("result.jpg", SaveLBF);
 }
 int main(int argc, char** argv)
 {
